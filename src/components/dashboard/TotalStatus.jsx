@@ -1,6 +1,8 @@
 import { Badge, Card, Grid, GridItem, HStack, Stat, StatArrow, StatHelpText, StatLabel, StatNumber } from '@chakra-ui/react';
 import { amountFormat } from '../util/amountFormat';
 import { TYPE } from '../constant';
+import { useContext } from 'react';
+import { AccountContext } from '../../App';
 
 const StatusItem = ({ type, text, amount }) => {
   return (
@@ -11,13 +13,12 @@ const StatusItem = ({ type, text, amount }) => {
             <StatLabel>{text}</StatLabel>
             <Badge colorScheme={type === 'income' ? 'green' : 'purple'}>{TYPE[type]}</Badge>
           </HStack>
-          <StatNumber>{amountFormat(amount)}</StatNumber>
-          <StatHelpText>
-            {/* TODO: 어제 지출과 비교해서 값 추출 후 increase인지 decrease인지 type 값 입력 */}
+          <StatNumber>{`${amountFormat(amount)}원`}</StatNumber>
+          {/* TODO */}
+          {/* <StatHelpText>
             <StatArrow type="increase" />
-            {/* TODO: 어제 지출과 비교해서 값 추출 */}
             23.36%
-          </StatHelpText>
+          </StatHelpText> */}
         </Stat>
       </Card>
     </GridItem>
@@ -27,6 +28,9 @@ const StatusItem = ({ type, text, amount }) => {
 const TotalStatus = () => {
   const today = new Date().getDate();
   const month = new Date().getMonth() + 1;
+  const year = new Date().getFullYear();
+
+  const [data] = useContext(AccountContext);
 
   return (
     <Grid templateColumns="repeat(4, 1fr)" gap={8}>
