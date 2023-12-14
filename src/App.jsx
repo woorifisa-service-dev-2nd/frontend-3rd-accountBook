@@ -1,9 +1,9 @@
-import { Button } from "@/components/ui/button";
+import { Text } from '@chakra-ui/react';
 
 function App() {
   return (
     <>
-      <Button>Click me</Button>
+      <Text>test</Text>
     </>
   );
 }
