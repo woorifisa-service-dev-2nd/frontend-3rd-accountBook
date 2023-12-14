@@ -15,6 +15,22 @@
       "chargeStatus": "living",
       "amount": "1000",
       "notes": "물티슈"
+    },
+    {
+      "id": "3",
+      "date": "2023-02-01",
+      "status": "charge",
+      "chargeStatus": "transportation",
+      "amount": "1400",
+      "notes": "버스"
+    },
+    {
+      "id": "4",
+      "date": "2023-02-01",
+      "status": "charge",
+      "chargeStatus": "etc",
+      "amount": "500000",
+      "notes": "월세"
     }
   ]
 }
