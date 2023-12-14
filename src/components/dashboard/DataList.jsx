@@ -69,9 +69,6 @@ const DataList = () => {
                         모두 삭제
                     </Button>
                 )}
-                <Button colorScheme="blue" m={4}>
-                    내역 추가
-                </Button>
             </Flex>
             <DataTable
                 data={data}

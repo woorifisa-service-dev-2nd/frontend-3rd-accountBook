@@ -12,9 +12,7 @@ const Chart = () => {
       .then((response) => response.json())
       .then((response) => setData(response.mockData));
   }, []);
-
-  console.log(data);
-
+  
   return (
     <Card padding={10}>
       <Stack spacing={12}>
