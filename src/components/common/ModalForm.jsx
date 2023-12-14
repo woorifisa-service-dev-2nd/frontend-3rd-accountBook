@@ -29,9 +29,6 @@ const ModalForm = () => {
 
     return (
         <>
-        <Button spacing={4} direction='row' align='center' onClick={onOpen}>추가</Button>
-        {/* <ModalForm isOpen={isOpen} onOpen={onOpen} onClose={onClose}></ModalForm> */}
-
         <Modal
             isOpen={isOpen}
             onClose={onClose}
