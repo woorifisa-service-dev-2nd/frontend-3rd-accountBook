@@ -1,38 +1,18 @@
-import { Card, Heading, Stack } from '@chakra-ui/react';
-import React from 'react';
+import React, { useContext } from 'react';
 import { Bar, BarChart, ResponsiveContainer, XAxis, YAxis } from 'recharts';
+import { AccountContext } from '../../App';
 
 const Chart = () => {
-  const [data, setData] = React.useState([]);
-
-  React.useEffect(() => {
-    const URL = 'http://127.0.0.1:5173/mock.json';
-
-    fetch(URL)
-      .then((response) => response.json())
-      .then((response) => setData(response.mockData));
-  }, []);
-
-  console.log(data);
+  const [data] = useContext(AccountContext);
 
   return (
-    <Card padding={10}>
-      <Stack spacing={12}>
-        <Heading as="h4" size="md">
-          Overview
-        </Heading>
-
-        {data.length > 0 && (
-          <ResponsiveContainer>
-            <BarChart width={300} height={200} data={data}>
-              <XAxis dataKey="chargeStatus" />
-              <YAxis dataKey="amount" />
-              <Bar dataKey="amount" fill="#8884d8" />
-            </BarChart>
-          </ResponsiveContainer>
-        )}
-      </Stack>
-    </Card>
+    <ResponsiveContainer width={'100%'} height={200}>
+      <BarChart width={300} height={'100%'} data={data}>
+        <XAxis dataKey="chargeStatus" />
+        <YAxis dataKey="amount" />
+        <Bar dataKey="amount" fill="#8884d8" />
+      </BarChart>
+    </ResponsiveContainer>
   );
 };
 
