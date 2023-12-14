@@ -5,10 +5,13 @@ import SelectBox from '../common/SelectBox';
 import DataTable from './DataTable';
 import { useContext } from 'react';
 import { AccountContext } from '../../App';
+import { useNavigate } from 'react-router-dom';
 
 const DashBoard = () => {
   const [data] = useContext(AccountContext);
   const recentData = data.slice(0, 5);
+
+  const navigate = useNavigate();
 
   return (
     <Stack spacing={8}>
@@ -36,7 +39,13 @@ const DashBoard = () => {
                 <Heading as="h4" size="md">
                   Recent Record
                 </Heading>
-                <Button>상세보기</Button>
+                <Button
+                  onClick={() => {
+                    navigate('/list');
+                  }}
+                >
+                  상세보기
+                </Button>
               </HStack>
               <DataTable fontSize={'sm'} bgColor={'white'} data={recentData} />
             </Stack>
