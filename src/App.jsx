@@ -1,10 +1,11 @@
-import { Text } from '@chakra-ui/react';
+import DashBoard from './components/dashboard/DashBoard';
+import LayoutContainer from './components/common/LayoutContainer';
 
 function App() {
   return (
-    <>
-      <Text>test</Text>
-    </>
+    <LayoutContainer>
+      <DashBoard />
+    </LayoutContainer>
   );
 }
 
