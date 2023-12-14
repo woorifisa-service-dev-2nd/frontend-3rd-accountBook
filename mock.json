@@ -1,0 +1,20 @@
+{
+  "mockData": [
+    {
+      "id": "1",
+      "date": "2023-02-01",
+      "status": "charge",
+      "chargeStatus": "food",
+      "amount": "100000",
+      "notes": "탕후루"
+    },
+    {
+      "id": "2",
+      "date": "2023-02-01",
+      "status": "charge",
+      "chargeStatus": "living",
+      "amount": "1000",
+      "notes": "물티슈"
+    }
+  ]
+}
