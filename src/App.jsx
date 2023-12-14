@@ -4,20 +4,41 @@ import DataList from './components/dashboard/DataList';
 import ModalForm from './components/common/ModalForm';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import NotFound from './NotFound';
-    
-function App() {
-  return (
-    <BrowserRouter>
-      <LayoutContainer>
-        <Routes>
-          <Route path="/" element={<DashBoard />}></Route>
-          <Route path="/list" element={<DataList />}></Route>
-			  	<Route path="*" element={<NotFound />}></Route>
-        </Routes>
-        <ModalForm></ModalForm>
-      </LayoutContainer>
-    </BrowserRouter>
-  );
-};
+import { createContext, useEffect, useState } from 'react';
 
-export default App
+export const AccountContext = createContext();
+
+function App() {
+  const [data, setData] = useState([]);
+
+  const fetchData = async () => {
+    try {
+      const response = await fetch('../mock.json');
+      const jsonData = await response.json();
+      setData(jsonData.mockData);
+    } catch (error) {
+      console.error('Error:', error);
+    }
+  };
+
+  useEffect(() => {
+    fetchData();
+  }, []);
+
+  return (
+    <AccountContext.Provider value={[data, setData]}>
+      <BrowserRouter>
+        <LayoutContainer>
+          <Routes>
+            <Route path="/" element={<DashBoard />}></Route>
+            <Route path="/list" element={<DataList />}></Route>
+            <Route path="*" element={<NotFound />}></Route>
+          </Routes>
+          <ModalForm />
+        </LayoutContainer>
+      </BrowserRouter>
+    </AccountContext.Provider>
+  );
+}
+
+export default App;
