@@ -1,11 +1,11 @@
-import { Text } from '@chakra-ui/react';
+import ModalForm from './components/common/ModalForm';
 
 function App() {
   return (
     <>
-      <Text>test</Text>
+      <ModalForm></ModalForm>
     </>
   );
 }
 
-export default App;
+export default App
