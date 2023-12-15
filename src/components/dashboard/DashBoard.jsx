@@ -1,4 +1,4 @@
-import { Button, Card, Grid, GridItem, HStack, Heading, Menu, MenuButton, MenuItem, MenuList, Stack, Text } from '@chakra-ui/react';
+import { Button, Card, Grid, GridItem, HStack, Heading, Menu, MenuButton, MenuItem, Link, MenuList, Stack, Text } from '@chakra-ui/react';
 import TotalStatus from './TotalStatus';
 import Chart from './Chart';
 import SelectBox from '../common/SelectBox';
@@ -39,13 +39,9 @@ const DashBoard = () => {
                 <Heading as="h4" size="md">
                   Recent Record
                 </Heading>
-                <Button
-                  onClick={() => {
-                    navigate('/list');
-                  }}
-                >
-                  상세보기
-                </Button>
+                <Link href='http://localhost:5173/list'>
+                 <Button>상세보기</Button>
+                </Link>
               </HStack>
               <DataTable fontSize={'sm'} bgColor={'white'} data={recentData} />
             </Stack>

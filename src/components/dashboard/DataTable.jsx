@@ -94,7 +94,7 @@ const DataTable = ({ fontSize, bgColor, data, checkedItems, toggleAllCheckboxes,
             .reverse()}
         </Tbody>
       </Table>
-      <ModalForm isOpen={isOpen} onClose={onClose} onClose={onClose} itemToEdit={itemToEdit} updateMockData={handleEdit} />
+      <ModalForm isOpen={isOpen} onClose={onClose} itemToEdit={itemToEdit} updateMockData={handleEdit} />
     </>
   );
 };
