@@ -17,12 +17,11 @@ const DashBoard = () => {
       <TotalStatus />
 
       <Grid templateColumns={'repeat(7,1fr)'} gap={8}>
-        {/* Overview */}
         <GridItem colSpan={3}>
           <Card p={10}>
             <Stack spacing={12}>
               <Heading as="h4" size="md">
-                Overview
+                Charge Overview
               </Heading>
               <Chart />
             </Stack>
@@ -37,8 +36,8 @@ const DashBoard = () => {
                 <Heading as="h4" size="md">
                   Recent Record
                 </Heading>
-                <Link href='http://localhost:5173/list'>
-                 <Button>상세보기</Button>
+                <Link href="http://localhost:5173/list">
+                  <Button>상세보기</Button>
                 </Link>
               </HStack>
               <DataTable fontSize={'sm'} bgColor={'white'} data={recentData} />

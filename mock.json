@@ -13,7 +13,7 @@
       "date": "2023-12-15",
       "status": "charge",
       "chargeStatus": "living",
-      "amount": "1000",
+      "amount": "10000",
       "notes": "물티슈"
     },
     {
@@ -21,7 +21,7 @@
       "date": "2023-12-01",
       "status": "charge",
       "chargeStatus": "transportation",
-      "amount": "1400",
+      "amount": "14000",
       "notes": "버스"
     },
     {
@@ -29,7 +29,7 @@
       "date": "2023-11-01",
       "status": "charge",
       "chargeStatus": "etc",
-      "amount": "500000",
+      "amount": "50000",
       "notes": "월세"
     },
     {
@@ -37,8 +37,16 @@
       "date": "2023-12-15",
       "status": "income",
       "chargeStatus": "",
-      "amount": "1111",
+      "amount": "10000",
       "notes": "ddd"
+    },
+    {
+      "id": "4702de25-950a-4d1d-9505-83d23ca2fa55",
+      "date": "2023-12-15",
+      "status": "charge",
+      "chargeStatus": "transportation",
+      "amount": "1000",
+      "notes": "버스"
     }
   ]
 }
