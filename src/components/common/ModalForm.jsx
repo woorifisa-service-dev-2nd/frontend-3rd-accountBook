@@ -67,7 +67,7 @@ const ModalForm = ({ isOpen, onOpen, onClose, updateMockData, itemToEdit }) => {
     onOpen();
   };
 
-  const fetchSave = (body) => {
+  const fetchAPI = (body) => {
     fetch(URL, {
       method: 'POST',
       headers: {
@@ -90,7 +90,7 @@ const ModalForm = ({ isOpen, onOpen, onClose, updateMockData, itemToEdit }) => {
       amount: formData.amount,
       notes: formData.notes,
     };
-    fetchSave(newData);
+    fetchAPI(newData);
 
     updateMockData(newData);
     setFormData({

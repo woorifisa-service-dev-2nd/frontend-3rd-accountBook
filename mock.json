@@ -38,15 +38,7 @@
       "status": "income",
       "chargeStatus": "",
       "amount": "10000",
-      "notes": "ddd"
-    },
-    {
-      "id": "4702de25-950a-4d1d-9505-83d23ca2fa55",
-      "date": "2023-12-15",
-      "status": "charge",
-      "chargeStatus": "transportation",
-      "amount": "1000",
-      "notes": "버스"
+      "notes": "수입"
     }
   ]
 }

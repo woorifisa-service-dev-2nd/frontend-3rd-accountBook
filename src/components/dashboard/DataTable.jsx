@@ -56,12 +56,12 @@ const DataTable = ({ fontSize, bgColor, data, checkedItems, toggleAllCheckboxes,
               <Th>
                 <Text fontSize={fontSize ? fontSize : 'xl'}>수정</Text>
               </Th>
-            )}
+            )}  */}
             {handleDelete && (
               <Th>
                 <Text fontSize="xl">삭제</Text>
               </Th>
-            )} */}
+            )}
           </Tr>
         </Thead>
         <Tbody>
@@ -86,14 +86,14 @@ const DataTable = ({ fontSize, bgColor, data, checkedItems, toggleAllCheckboxes,
                       수정
                     </Button>
                   </Td>
-                )}
+                )} */}
                 {handleDelete && (
                   <Td>
                     <Button colorScheme="red" onClick={() => handleDelete(item.id)}>
                       삭제
                     </Button>
                   </Td>
-                )} */}
+                )} 
               </Tr>
             ))
             .reverse()}
