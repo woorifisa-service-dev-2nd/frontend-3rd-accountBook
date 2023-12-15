@@ -12,7 +12,7 @@ export const CHARGE_LIST = {
   income: '수입',
 };
 
-const DataTable = ({ fontSize, bgColor, data, checkedItems, toggleAllCheckboxes, toggleSingleCheckbox, handleEdit, handleDelete }) => {
+const DataTable = ({ size, fontSize, bgColor, data, checkedItems, toggleAllCheckboxes, toggleSingleCheckbox, handleEdit, handleDelete }) => {
   const { isOpen, onOpen, onClose } = useDisclosure();
   const [itemToEdit, setItemToEdit] = useState(null);
 
@@ -24,7 +24,7 @@ const DataTable = ({ fontSize, bgColor, data, checkedItems, toggleAllCheckboxes,
 
   return (
     <>
-      <Table variant="simple" size="sm">
+      <Table variant="simple" size={size ? "sm" : size}>
         <Thead>
           <Tr backgroundColor={bgColor ? bgColor : 'skyblue'}>
             {toggleAllCheckboxes && checkedItems && (
