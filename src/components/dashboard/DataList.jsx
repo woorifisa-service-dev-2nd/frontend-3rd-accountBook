@@ -29,10 +29,16 @@ const DataList = ({ updatedData }) => {
   const isAnyItemChecked = () => checkedItems.some(Boolean);
   // 모두 삭제
   const handleDeleteChecked = () => {
-    const newData = data.filter((item, index) => !checkedItems[index]);
-    setData(newData);
-    setCheckedItems(newData.map(() => false));
-  };
+    const checkedData = data.filter((item, index) => checkedItems[index]);
+    const uncheckedData = data.filter((item, index) => !checkedItems[index]);
+
+    Promise.all(checkedData.map((item) => fetchAPI(item.id)))
+        .then(() => {
+            setData(uncheckedData);
+            setCheckedItems(uncheckedData.map(() => false));
+        })
+        .catch((e) => console.log(e));
+    };
 
   const fetchAPI = (id) => {
     fetch(`${URL}/${id}`, {
