@@ -24,7 +24,7 @@ const DataTable = ({ fontSize, bgColor, data, checkedItems, toggleAllCheckboxes,
 
   return (
     <>
-      <Table variant="simple" size="lg">
+      <Table variant="simple" size="sm">
         <Thead>
           <Tr backgroundColor={bgColor ? bgColor : 'skyblue'}>
             {toggleAllCheckboxes && checkedItems && (
@@ -73,7 +73,7 @@ const DataTable = ({ fontSize, bgColor, data, checkedItems, toggleAllCheckboxes,
                     <Checkbox isChecked={checkedItems[index]} onChange={(e) => toggleSingleCheckbox(index, e.target.checked)}></Checkbox>
                   </Td>
                 )}
-                <Td>{item.date}</Td>
+                <Td >{item.date}</Td>
                 <Td>{changeToKorean[item.status]}</Td>
                 <Td>{changeToKorean[item.chargeStatus]}</Td>
                 <Td>{`${amountFormat(Number(item.amount))}원`}</Td>
