@@ -9,14 +9,13 @@ const DataList = ({ updatedData }) => {
   const [data, setData] = useContext(AccountContext);
   const [checkedItems, setCheckedItems] = useState([]);
 
-  // NOTE : 임시 주석
   // 삭제
   const handleDelete = (id) => {
     const newData = data.filter((item) => item.id !== id);
     setData(newData);
     setCheckedItems(newData.map(() => false));
 
-    fetchSave(id);
+    fetchAPI(id);
   };
   // 체크박스
   const toggleAllCheckboxes = (isChecked) => {
@@ -35,7 +34,7 @@ const DataList = ({ updatedData }) => {
     setCheckedItems(newData.map(() => false));
   };
 
-  const fetchSave = (id) => {
+  const fetchAPI = (id) => {
     fetch(`${URL}/${id}`, {
       method: 'DELETE',
       headers: {
