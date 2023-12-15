@@ -24,7 +24,7 @@ const DataTable = ({ fontSize, bgColor, data, checkedItems, toggleAllCheckboxes,
 
   return (
     <>
-      <Table variant="simple" size="lg">
+      <Table variant="simple" size="sm">
         <Thead>
           <Tr backgroundColor={bgColor ? bgColor : 'skyblue'}>
             {toggleAllCheckboxes && checkedItems && (
@@ -93,7 +93,7 @@ const DataTable = ({ fontSize, bgColor, data, checkedItems, toggleAllCheckboxes,
                       삭제
                     </Button>
                   </Td>
-                )} 
+                )}
               </Tr>
             ))
             .reverse()}
