@@ -28,7 +28,7 @@ const Chart = () => {
   }, [data]);
 
   return (
-    <ResponsiveContainer width={'100%'} height={400}>
+    <ResponsiveContainer width={'100%'} height={200}>
       <BarChart width={300} height={'100%'} data={chartChargeData}>
         <CartesianGrid strokeDasharray="3" />
         <XAxis dataKey={'chargeStatus'} />

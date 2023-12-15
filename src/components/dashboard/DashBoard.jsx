@@ -8,7 +8,7 @@ import { useNavigate } from 'react-router-dom';
 
 const DashBoard = () => {
   const [data] = useContext(AccountContext);
-  const recentData = data.slice(0, 3);
+  const recentData = data.slice(0, 4);
 
   const navigate = useNavigate();
 
@@ -18,7 +18,7 @@ const DashBoard = () => {
 
       <Grid templateColumns={'repeat(7,1fr)'} gap={8}>
         <GridItem colSpan={3}>
-          <Card p={10}>
+          <Card p={10} h={400}>
             <Stack spacing={12}>
               <Heading as="h4" size="md">
                 Charge Overview
@@ -30,7 +30,7 @@ const DashBoard = () => {
 
         {/* Recent Record */}
         <GridItem colSpan={4}>
-          <Card p={10}>
+          <Card p={10} h={400}>
             <Stack spacing={12}>
               <HStack justifyContent={'space-between'}>
                 <Heading as="h4" size="md">
