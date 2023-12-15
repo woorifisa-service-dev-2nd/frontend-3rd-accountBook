@@ -6,6 +6,8 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import NotFound from './NotFound';
 import { createContext, useEffect, useState } from 'react';
 
+export const URL = 'http://localhost:5008/mockData';
+
 export const AccountContext = createContext();
 
 function App() {
@@ -13,9 +15,9 @@ function App() {
 
   const fetchData = async () => {
     try {
-      const response = await fetch('../mock.json');
+      const response = await fetch(URL);
       const jsonData = await response.json();
-      setData(jsonData.mockData);
+      setData(jsonData);
     } catch (error) {
       console.error('Error:', error);
     }
