@@ -44,7 +44,7 @@ const DashBoard = () => {
                   상세보기
                 </Button>
               </HStack>
-              <DataTable fontSize={'sm'} bgColor={'white'} data={recentData} />
+              <DataTable fontSize={'sm'} bgColor={'white'} data={recentData} size={'lg'} />
             </Stack>
           </Card>
         </GridItem>
