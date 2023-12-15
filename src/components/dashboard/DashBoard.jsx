@@ -17,12 +17,11 @@ const DashBoard = () => {
       <TotalStatus />
 
       <Grid templateColumns={'repeat(7,1fr)'} gap={8}>
-        {/* Overview */}
         <GridItem colSpan={3}>
           <Card p={10}>
             <Stack spacing={12}>
               <Heading as="h4" size="md">
-                Overview
+                Charge Overview
               </Heading>
               <Chart />
             </Stack>
