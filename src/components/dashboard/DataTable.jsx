@@ -3,7 +3,7 @@ import { Table, Thead, Tbody, Tr, Th, Td, Checkbox, Button, Text, useDisclosure 
 import { amountFormat } from '../util/amountFormat';
 import ModalForm from '../common/ModalForm';
 
-const changeToKorean = {
+export const CHARGE_LIST = {
   food: '식비',
   living: '생활비',
   transportation: '교통비',
@@ -73,9 +73,9 @@ const DataTable = ({ fontSize, bgColor, data, checkedItems, toggleAllCheckboxes,
                     <Checkbox isChecked={checkedItems[index]} onChange={(e) => toggleSingleCheckbox(index, e.target.checked)}></Checkbox>
                   </Td>
                 )}
-                <Td >{item.date}</Td>
-                <Td>{changeToKorean[item.status]}</Td>
-                <Td>{changeToKorean[item.chargeStatus]}</Td>
+                <Td>{item.date}</Td>
+                <Td>{CHARGE_LIST[item.status]}</Td>
+                <Td>{CHARGE_LIST[item.chargeStatus]}</Td>
                 <Td>{`${amountFormat(Number(item.amount))}원`}</Td>
                 <Td>{item.notes}</Td>
 
@@ -93,7 +93,7 @@ const DataTable = ({ fontSize, bgColor, data, checkedItems, toggleAllCheckboxes,
                       삭제
                     </Button>
                   </Td>
-                )} 
+                )}
               </Tr>
             ))
             .reverse()}
