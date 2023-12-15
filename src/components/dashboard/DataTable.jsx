@@ -3,23 +3,25 @@ import { Table, Thead, Tbody, Tr, Th, Td, Checkbox, Button, Text, useDisclosure 
 import { amountFormat } from '../util/amountFormat';
 import ModalForm from '../common/ModalForm';
 
+const changeToKorean = {
+  food: '식비',
+  living: '생활비',
+  transportation: '교통비',
+  etc: '기타',
+  charge: '지출',
+  income: '수입',
+};
+
 const DataTable = ({ fontSize, bgColor, data, checkedItems, toggleAllCheckboxes, toggleSingleCheckbox, handleEdit, handleDelete }) => {
   const { isOpen, onOpen, onClose } = useDisclosure();
   const [itemToEdit, setItemToEdit] = useState(null);
 
-  const handleEditClick = (item) => {
-    setItemToEdit(item);
-    handleEdit(onOpen);
-  };
-  // 구분, 항목 한글로
-  const changeToKorean = {
-    food: '식비',
-    living: '생활비',
-    transportation: '교통비',
-    etc: '기타',
-    charge: '지출',
-    income: '수입',
-  };
+  // NOTE: 수정 기능 임시 주석
+  // const handleEditClick = (item) => {
+  //   setItemToEdit(item);
+  //   handleEdit(onOpen);
+  // };
+
   return (
     <>
       <Table variant="simple" size="lg">
@@ -49,7 +51,8 @@ const DataTable = ({ fontSize, bgColor, data, checkedItems, toggleAllCheckboxes,
             <Th>
               <Text fontSize={fontSize ? fontSize : 'xl'}>메모</Text>
             </Th>
-            {handleEdit && (
+            {/* NOTE : 수정/삭제 기능 임시 주석 */}
+            {/* {handleEdit && (
               <Th>
                 <Text fontSize={fontSize ? fontSize : 'xl'}>수정</Text>
               </Th>
@@ -58,7 +61,7 @@ const DataTable = ({ fontSize, bgColor, data, checkedItems, toggleAllCheckboxes,
               <Th>
                 <Text fontSize="xl">삭제</Text>
               </Th>
-            )}
+            )} */}
           </Tr>
         </Thead>
         <Tbody>
@@ -75,7 +78,9 @@ const DataTable = ({ fontSize, bgColor, data, checkedItems, toggleAllCheckboxes,
                 <Td>{changeToKorean[item.chargeStatus]}</Td>
                 <Td>{`${amountFormat(Number(item.amount))}원`}</Td>
                 <Td>{item.notes}</Td>
-                {handleEdit && (
+
+                {/* NOTE : 수정/삭제 기능 임시 주석 */}
+                {/* {handleEdit && (
                   <Td>
                     <Button colorScheme="blue" onClick={() => handleEditClick(item)}>
                       수정
@@ -88,12 +93,13 @@ const DataTable = ({ fontSize, bgColor, data, checkedItems, toggleAllCheckboxes,
                       삭제
                     </Button>
                   </Td>
-                )}
+                )} */}
               </Tr>
             ))
             .reverse()}
         </Tbody>
       </Table>
+
       <ModalForm isOpen={isOpen} onClose={onClose} itemToEdit={itemToEdit} updateMockData={handleEdit} />
     </>
   );
