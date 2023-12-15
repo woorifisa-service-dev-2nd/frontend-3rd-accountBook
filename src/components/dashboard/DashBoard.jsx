@@ -1,18 +1,16 @@
 import { Button, Card, Grid, GridItem, HStack, Heading, Menu, MenuButton, MenuItem, MenuList, Stack, Text } from '@chakra-ui/react';
 import TotalStatus from './TotalStatus';
 import Chart from './Chart';
-import SelectBox from '../common/SelectBox';
 import DataTable from './DataTable';
 import { useContext } from 'react';
 import { AccountContext } from '../../App';
 
 const DashBoard = () => {
   const [data] = useContext(AccountContext);
-  const recentData = data.slice(0, 5);
+  const recentData = data.slice(0, 3);
 
   return (
     <Stack spacing={8}>
-      <SelectBox />
       <TotalStatus />
 
       <Grid templateColumns={'repeat(7,1fr)'} gap={8}>
