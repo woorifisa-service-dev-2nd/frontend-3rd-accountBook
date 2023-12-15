@@ -15,6 +15,7 @@ import {
   NumberInput,
   NumberInputField,
 } from '@chakra-ui/react';
+import { URL } from '../../App';
 const ModalForm = ({ isOpen, onOpen, onClose, updateMockData, itemToEdit }) => {
   // const { isOpen, onOpen, onClose } = useDisclosure();
 
@@ -66,6 +67,18 @@ const ModalForm = ({ isOpen, onOpen, onClose, updateMockData, itemToEdit }) => {
     onOpen();
   };
 
+  const fetchSave = (body) => {
+    fetch(URL, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(body),
+    })
+      .then((response) => response.json())
+      .catch((e) => console.log(e));
+  };
+
   const handleSave = () => {
     const status = expenseType === 'income' ? 'income' : 'charge';
     const chargeStatus = status === 'charge' ? expenseCategory : '';
@@ -77,6 +90,7 @@ const ModalForm = ({ isOpen, onOpen, onClose, updateMockData, itemToEdit }) => {
       amount: formData.amount,
       notes: formData.notes,
     };
+    fetchSave(newData);
 
     updateMockData(newData);
     setFormData({
